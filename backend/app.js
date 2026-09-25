@@ -52,12 +52,11 @@ app.get("/api/health", async (req, res) => {
       status: "success",
       message: "CampusConnect API and PostgreSQL are connected",
     });
-  } catch (error) {
-    console.error("Database connection failed:", error.message);
-
+    } catch (error) {
+    console.error("Database connection failed:", error);
     res.status(500).json({
       status: "error",
-      message: "Database connection failed",
+      message: error.message,
     });
   }
 });
