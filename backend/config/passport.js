@@ -35,6 +35,7 @@ passport.use(
 
         return done(null, user);
       } catch (error) {
+        console.error("Passport login database error:", error);
         return done(error);
       }
     }
