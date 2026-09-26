@@ -10,6 +10,7 @@ const categoryRoutes = require("./routes/categoryRoutes");
 const userRoutes = require("./routes/userRoutes");
 
 const app = express();
+app.set("trust proxy", 1);
 app.use(
   cors({
     origin: process.env.FRONTEND_URL || "http://localhost:5173",
